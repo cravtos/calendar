@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Users</title>
+    <link rel="stylesheet" href="{{ static_url('style.css') }}" type = "text/css">
+</head>
+<body>
+    {% include "header.html" %}
+
+    <h1>Users</h1>
+    {% for user in users %}
+        <p>{{ user.username }}</p>
+    {% end %}
+</body>
+</html>

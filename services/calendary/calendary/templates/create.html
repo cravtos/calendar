@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Event</title>
+    <link rel="stylesheet" href="{{ static_url('style.css') }}" type = "text/css">
+</head>
+<body>
+    {% include "header.html" %}
+
+    <form method="post" action="/create" id="event-form">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br>
+
+        <label for="start">Start:</label><br>
+        <input type="datetime-local" id="start" name="start" required><br>
+
+        <label for="end">End:</label><br>
+        <input type="datetime-local" id="end" name="end" required><br>
+
+        <label for="details">Details:</label><br>
+        <input type="text" id="details" name="details" required><br>
+
+        <label for="private">Private:</label><br>
+        <input type="checkbox" id="private" name="private"><br>
+
+        <input type="submit" value="Create Event">
+    </form>
+</body>
+</html>

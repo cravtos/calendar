@@ -1,0 +1,131 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    
+}
+
+h1 {
+    text-align: center;
+    color: #4285f4;
+}
+.current-user {
+    border: 10px solid #f9f9f9;
+    color: #f9f9f9;
+    float: right;
+    font-weight: bold;
+  }
+
+form {
+    max-width: 1000px;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    display: block;
+    margin: 10px 0;
+    color: #555;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #4285f4;
+    color: #fff;
+    cursor: pointer;
+}
+
+.inline-element {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.thick {
+    font-weight: bold;
+    /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
+    text-transform: uppercase;
+    font-family: sans; color: #4285f4;
+    font-family: Arial, sans-serif;
+
+}
+
+.blue {
+    font-family: sans; color: #4285f4;
+}
+
+.center-div {
+    text-align: center;
+}
+
+.header-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    width: 70%; /* Make the table almost full width */
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+table th,
+table td,
+button,
+input[type="submit"] {
+  border-radius: 5px;
+}
+
+/* Button Color */
+button {
+  background-color: #4285f4;
+  color: white;
+}
+
+button,
+a {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #4285f4;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Styling for hrefs like buttons */
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  background-color: #3367d6;
+}
+
+button:hover {
+  background-color: #3367d6;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Details</title>
+    <link rel="stylesheet" href="{{ static_url('style.css') }}" type = "text/css">
+    <style>
+        p {
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    {% include "header.html" %}
+
+    <h1>Event Details</h1>
+    <strong>Name:</strong><p>{{ event.name }}</p><br>
+    <strong>User:</strong><p>{{ event.username }}</p><br>
+    <strong>Start:</strong><p class="start-time" data-timestamp="{{ event.start }}">{{ event.start }}</p><br>
+    <strong>End:</strong><p class="end-time" data-timestamp="{{ event.end }}">{{ event.end }}</p><br>
+    <strong>Details:</strong><p>{{ event.details }}</p><br>
+
+    <script>
+        window.onload = function() {
+            var startTimes = document.querySelectorAll('.start-time');
+            var endTimes = document.querySelectorAll('.end-time');
+    
+            startTimes.forEach(function(element) {
+                var timestamp = element.getAttribute('data-timestamp');
+                var date = new Date(timestamp * 1000);
+                var formatted = date.toLocaleString('ru-RU', { hour: 'numeric', minute: 'numeric', day: 'numeric', month: 'numeric', year: 'numeric' });
+                element.textContent = formatted;
+            });
+    
+            endTimes.forEach(function(element) {
+                var timestamp = element.getAttribute('data-timestamp');
+                var date = new Date(timestamp * 1000);
+                var formatted = date.toLocaleString('ru-RU', { hour: 'numeric', minute: 'numeric', day: 'numeric', month: 'numeric', year: 'numeric' });
+                element.textContent = formatted;
+            });
+        };
+    </script>
+
+    <form action="/event/{{ event.id }}/share" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <input type="submit" value="Share Event">
+    </form>
+    
+
+</body>
+</html>

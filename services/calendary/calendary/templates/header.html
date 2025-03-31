@@ -1,0 +1,10 @@
+<header class="header-content">
+    <button onclick="location.href='/'" class="inline-element">Events</button>
+    {% if current_user %}
+        <button onclick="location.href='/logout'" class="inline-element">Logout</button>
+        <p class="thick"> {{ current_user }}</p>
+    {% else %}
+        <button onclick="location.href='/register'" class="inline-element">Register</button>
+        <button onclick="location.href='/login'" class="inline-element">Login</button>
+    {% end %}
+</header>

@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+  cal:
+    build: .
+    ports:
+      - "8888:8888"
+    restart: always
+    stop_grace_period: 0s
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 1G
+          pids: 1000
+
+    ulimits:
+      nofile: 
+        soft: 50000
+        hard: 50000
+    
+  postgres:
+    container_name: postgres_container
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: changeme
+      PGDATA: /data/postgres
+    volumes:
+       - postgres:/data/postgres
+    restart: unless-stopped
+
+volumes:
+  postgres:
