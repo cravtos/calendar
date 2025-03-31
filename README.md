@@ -2,7 +2,7 @@
 
 Сервис, реализующий календарь событий.
 
-Авторы: @Borgc, @anatolymedvedev, @Cravtos
+Авторы: [@Borgc](https://github.com/Borgc), [@anatolymedvedev](https://github.com/anatolymedvedev), [@Cravtos](https://github.com/Cravtos)
 
 ## Тэги
  * Web
