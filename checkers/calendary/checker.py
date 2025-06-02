@@ -661,17 +661,20 @@ def info():
 def _main():
     try:
         cmd = argv[1]
+        if cmd == "info":
+            info()
+            return
+        
         hostname = argv[2]
+        if cmd == "check":
+            check(hostname)
+            return
+        
+        fid, flag, vuln = argv[3], argv[4], int(argv[5])
         if cmd == "get":
-            fid, flag, vuln = argv[3], argv[4], int(argv[5])
             get(hostname, fid, flag, vuln)
         elif cmd == "put":
-            fid, flag, vuln = argv[3], argv[4], int(argv[5])
             put(hostname, fid, flag, vuln)
-        elif cmd == "check":
-            check(hostname)
-        elif cmd == "info":
-            info()
         else:
             raise IndexError
     except IndexError:
